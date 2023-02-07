@@ -2,14 +2,25 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"strconv"
 )
 
+const BASELINE_VALUE float64 = 0.01
+
 func Sqrt(x float64) float64 {
 	z := 1.0
+	prevVal := 1.0
+	currentVal := 1.0
 	for i := 0; i < 10; i++ {
+		prevVal = z
 		z -= (z*z - x) / (2 * z)
-		//fmt.Println(z)
+		currentVal = z
+		if math.Abs(currentVal-prevVal) <= BASELINE_VALUE {
+			//ごくわずかな変化の場合は処理を終了する
+			break
+		}
+		// fmt.Println(z)
 	}
 	return z
 }
