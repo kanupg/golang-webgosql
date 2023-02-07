@@ -9,4 +9,11 @@ func main() {
 		sum += i
 	}
 	fmt.Println(sum)
+
+	//初期化と後処理ステートメントとセミコロン省略可能
+	sum = 1
+	for sum < 10 {
+		sum += 1
+	}
+	fmt.Println(sum)
 }
