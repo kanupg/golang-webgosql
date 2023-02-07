@@ -8,7 +8,7 @@ import (
 
 const BASELINE_VALUE float64 = 0.01
 
-func Sqrt(x float64) float64 {
+func Sqrt(x float64) (float64, int) {
 	z := 1.0
 	prevVal := 1.0
 	currentVal := 1.0
@@ -24,15 +24,17 @@ func Sqrt(x float64) float64 {
 		}
 		// fmt.Println(z)
 	}
-	fmt.Println(strconv.Itoa(count) + "回繰り返しました")
-	return z
+	return z, count
 }
 
 func main() {
 	for i := 0; i < 10; i++ {
 		target := float64(i + 1)
+		ans, count := Sqrt(target)
 		fmt.Println(strconv.Itoa(i+1) + "を読み込み")
-		fmt.Println(Sqrt(target))
+		fmt.Println(ans)
+		fmt.Println(strconv.Itoa(count) + "回繰り返しました")
+
 	}
 
 }
