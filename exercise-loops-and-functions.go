@@ -12,7 +12,9 @@ func Sqrt(x float64) float64 {
 	z := 1.0
 	prevVal := 1.0
 	currentVal := 1.0
+	count := 0
 	for i := 0; i < 10; i++ {
+		count++
 		prevVal = z
 		z -= (z*z - x) / (2 * z)
 		currentVal = z
@@ -22,6 +24,7 @@ func Sqrt(x float64) float64 {
 		}
 		// fmt.Println(z)
 	}
+	fmt.Println(strconv.Itoa(count) + "回繰り返しました")
 	return z
 }
 
