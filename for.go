@@ -16,4 +16,11 @@ func main() {
 		sum += 1
 	}
 	fmt.Println(sum)
+
+	//無限ループはかんたん
+	for {
+		fmt.Println("無限")
+		break
+	}
+
 }
